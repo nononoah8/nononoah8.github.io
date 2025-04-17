@@ -1,0 +1,278 @@
+/* Color palette */
+:root {
+  --dark-teal: #244855;
+  --bright-orange: #E64833;
+  --brown: #874F41;
+  --sage: #90AEAD;
+  --cream: #FBE9D0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--cream);
+  color: var(--dark-teal);
+  overflow-x: hidden;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: var(--dark-teal);
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--cream);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--cream);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link-active { 
+  color: var(--bright-orange);
+}
+
+.nav-link:hover {
+  color: var(--bright-orange);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--cream);
+  transition: all 0.3s ease;
+}
+
+/* Media queries for responsive design */
+@media only screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: var(--dark-teal);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    padding: 1rem 0;
+  }
+  
+  .nav-item {
+    margin: 16px 0;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+}
+
+
+.resume-section {
+  padding-top: 100px;
+  margin: 0 auto;
+  max-width: 1000px;
+  padding-bottom: 50px;
+}
+
+.resume-container {
+  background-color: var(--cream);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.resume-header {
+  background-color: var(--dark-teal);
+  color: var(--cream);
+  padding: 30px;
+  text-align: center;
+}
+
+.resume-header h1 {
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+
+.resume-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.contact-info {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-info p {
+  margin: 0;
+}
+
+.contact-label {
+  font-weight: bold;
+  color: var(--bright-orange);
+}
+
+.contact-info a {
+  color: var(--cream);
+  text-decoration: underline;
+}
+
+.contact-info a:hover {
+  color: var(--bright-orange);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.resume-content {
+  padding: 30px;
+}
+
+.resume-section-title {
+  color: var(--brown);
+  border-bottom: 3px solid var(--bright-orange);
+  padding-bottom: 10px;
+  margin: 30px 0 20px;
+}
+
+.resume-item {
+  margin-bottom: 25px;
+}
+
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.resume-item-title {
+  color: var(--dark-teal);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.resume-item-subtitle {
+  color: var(--brown);
+  font-style: italic;
+}
+
+.resume-item-date {
+  color: var(--bright-orange);
+  font-weight: 500;
+}
+
+.resume-item-content {
+  color: var(--dark-teal);
+}
+
+.resume-item-content p {
+  margin-bottom: 12px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.skill-tag {
+  background-color: var(--sage);
+  color: var(--dark-teal);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.download-btn {
+  display: inline-block;
+  background-color: var(--bright-orange);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #d13e2a;
+}
+
+@media (max-width: 768px) {
+  .resume-item-header {
+    flex-direction: column;
+  }
+  
+  .resume-item-date {
+    margin-top: 5px;
+  }
+}
